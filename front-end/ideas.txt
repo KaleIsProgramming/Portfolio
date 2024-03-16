@@ -1,0 +1,16 @@
+1. NAVBAR jako karuzela i aktywna opcja ma być na środku
+ i jak zmieniasz na inną ma karuzela się przekręcać 
+,a stronki które są wyświetlane mają wskakiwać z lewej lub prawej
+
+plan na navbar [0 1 0] od lewej projects about me contact 1 oznacza aktywny 
+
+2. text na AboutMe
+
+Hi there!
+My name is Peter. I'm 20 year old student in Poznań University of Technology.
+I started 
+programming 2 years ago at my 4th year in technical school. In this 2 years
+i have learned multiple programming languages like javascript 
+with multiple frameworks and libraries, python with tinker for desktop apps,
+lua, c and c++ but at the end of the day i choose to became 
+FullStack webdeveloper, so let me build a website for you
