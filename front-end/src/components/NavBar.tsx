@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import styled from "@emotion/styled";
 import { useLocation } from "react-router-dom";
@@ -37,14 +37,24 @@ export const NavBar = () => {
         }
     }
 
+    useEffect(() => {
+        for(let i = 0; i < navItems.length; i++) {
+            
+            if((location == navItems[i].to) && (navItems.indexOf(navItems[i]) != Math.floor(navItems.length/2))) {
+                anchorHandler(navItems[i])
+            }
+        }
+
+    },[])
+
     return(
         <StyledNavBar>
             <LeftContainer>
-                { navItems.map(item => {
+                { navItems.map((item, i) => {
                 if(location == item.to) {
-                    return <MainAnchor to={item.to}>{item.name}</MainAnchor>
+                    return <MainAnchor key={i} to={item.to}>{item.name}</MainAnchor>
                 } else {
-                    return <Anchor onClick={() => anchorHandler(item)} to={item.to}>{item.name}</Anchor>
+                    return <Anchor key={i} onClick={() => anchorHandler(item)} to={item.to}>{item.name}</Anchor>
                 }
 }) }
             </LeftContainer>

@@ -4,3 +4,7 @@
   box-sizing: border-box;
   font-family: 'Roboto Mono';
 }
+
+body {
+  background: rgb(31, 30, 30);
+}
