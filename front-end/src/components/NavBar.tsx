@@ -1,10 +1,41 @@
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import styled from "@emotion/styled";
 import { useLocation } from "react-router-dom";
 
+interface item {
+    to: string;
+    name: string;
+}
+
 export const NavBar = () => {
-    const navItems = [{to:'/projects', name:'Projects'}, {to:'/', name:'AboutMe'}, {to:'/contact', name:'Contact'}];
+    const [ navItems, setNavItems ] = useState([{to:'/projects', name:'Projects'}, {to:'/', name:'AboutMe'}, {to:'/contact', name:'Contact'}])
     const location = useLocation().pathname;
+
+    const anchorHandler = (item: item) => {
+        const i = navItems.indexOf(item);
+
+        switch(i) {
+
+            case 0:
+                const temp: item[] = [navItems[(navItems.length-1)]];
+                for(let j = 0; j < (navItems.length - 1); j++) {
+                    temp.push(navItems[j]);
+                }
+                setNavItems(temp);
+                break;
+            case 2: 
+                const tempv2: item[] = [];
+                for(let j = 0; j < (navItems.length - 1); j++) {
+                    tempv2.push(navItems[j+1]);
+                }
+                tempv2.push(navItems[0]);
+                setNavItems(tempv2);
+                break;
+            default: 
+                break;
+        }
+    }
 
     return(
         <StyledNavBar>
@@ -13,7 +44,7 @@ export const NavBar = () => {
                 if(location == item.to) {
                     return <MainAnchor to={item.to}>{item.name}</MainAnchor>
                 } else {
-                    return <Anchor to={item.to}>{item.name}</Anchor>
+                    return <Anchor onClick={() => anchorHandler(item)} to={item.to}>{item.name}</Anchor>
                 }
 }) }
             </LeftContainer>

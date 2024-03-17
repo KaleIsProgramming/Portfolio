@@ -14,3 +14,8 @@ i have learned multiple programming languages like javascript
 with multiple frameworks and libraries, python with tinker for desktop apps,
 lua, c and c++ but at the end of the day i choose to became 
 FullStack webdeveloper, so let me build a website for you
+
+
+3 do animacji \
+gsap
+framer motion
