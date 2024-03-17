@@ -15,6 +15,16 @@ with multiple frameworks and libraries, python with tinker for desktop apps,
 lua, c and c++ but at the end of the day i choose to became 
 FullStack webdeveloper, so let me build a website for you
 
+3. text na Contact me
+Piotr Kostecki
+ikonka lokalizacji i obok Poznań/Poland
+znak email i obok pio1kostecki@gmail.com
+icona git huba insta linkedina i facebooka
+
+Mail to header z Send me a message
+inputy typu text na nick mail i input text area na treść
+
+
 
 3 do animacji \
 gsap
