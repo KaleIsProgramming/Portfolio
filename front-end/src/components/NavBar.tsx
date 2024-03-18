@@ -40,18 +40,18 @@ export const NavBar = () => {
     useEffect(() => {
         for(let i = 0; i < navItems.length; i++) {
             
-            if((location == navItems[i].to) && (navItems.indexOf(navItems[i]) != Math.floor(navItems.length/2))) {
+            if((location === navItems[i].to) && (navItems.indexOf(navItems[i]) !== Math.floor(navItems.length/2))) {
                 anchorHandler(navItems[i])
             }
         }
 
-    },[])
+    },)
 
     return(
         <StyledNavBar>
             <LeftContainer>
                 { navItems.map((item, i) => {
-                if(location == item.to) {
+                if(location === item.to) {
                     return <MainAnchor key={i} to={item.to}>{item.name}</MainAnchor>
                 } else {
                     return <Anchor key={i} onClick={() => anchorHandler(item)} to={item.to}>{item.name}</Anchor>
