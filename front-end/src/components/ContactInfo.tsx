@@ -34,9 +34,38 @@ export const ContactInfo = () => {
 }
 
 const ContactInfoContainer = styled.div`
-    height: 60%;
+    min-height: 40vh;
     width: 50%;
     display: flex;
+    
+
+    @media screen and (max-width: 1340px) {
+        min-height: 50vh;
+        margin-top: 40vh;
+        width: 90%;
+    }
+
+    @media screen and (max-width: 800px) {
+        margin-top: 60vh;
+        min-height: 80vh;
+        flex-direction: column;
+        align-items: center;
+
+        div {
+            height: 50%;
+        }
+    }
+
+    @media screen and (max-width: 400px) {
+        margin-top: 100vh;
+        min-height: 120vh;
+        flex-direction: column;
+        align-items: center;
+
+        div {
+            height: 50%;
+        }
+    }
 `;
 
 const DataContainer = styled.div`
@@ -55,6 +84,10 @@ const PhotoContainer = styled.div`
         height: 300px;
         width: 300px;
         border-radius: 50%;
+    }
+
+    @media screen and (max-width: 800px) {
+        width: 100%;
     }
 `
 

@@ -32,10 +32,19 @@ const MainContainer = styled.form`
     display: flex;
     justify-content: center;
     flex-direction: column;
+    overflow: visible;
+
+    @media screen and (max-width: 1340px) {
+        min-height: 50vh;
+        align-items: center;
+        width: 60%;
+        margin-bottom: 5%;
+    }
 `;
 
 const InputContainer = styled.div`
     color: white;
+    overflow: visible;
 
     h3 {
         margin: 20px 0px;
@@ -64,5 +73,28 @@ const InputContainer = styled.div`
         border: none;
         margin-top: 5px;
         font-size: 1.2rem;
+        cursor: pointer;
+    }
+
+    @media screen and (max-width: 1340px) {
+        width: 400px;
+
+        input {
+            width: 100%;
+        }
+
+        button {
+            width: 100%;
+        }
+
+        textarea {
+            width: 100%;
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        width: 300px;
+
+
     }
 `;
