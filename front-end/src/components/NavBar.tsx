@@ -49,7 +49,7 @@ export const NavBar = () => {
 
     return(
         <StyledNavBar>
-            <LeftContainer>
+            <MainContainer>
                 { navItems.map((item, i) => {
                 if(location === item.to) {
                     return <MainAnchor key={i} to={item.to}>{item.name}</MainAnchor>
@@ -57,7 +57,7 @@ export const NavBar = () => {
                     return <Anchor key={i} onClick={() => anchorHandler(item)} to={item.to}>{item.name}</Anchor>
                 }
 }) }
-            </LeftContainer>
+            </MainContainer>
         </StyledNavBar>
     )
 }
@@ -66,17 +66,29 @@ const StyledNavBar = styled.div`
     height: 9vh;
     width: 100vw;
     display: flex;  
+    justify-content: center;
     background: rgb(31, 30, 30);
 
 `;
 
-const LeftContainer = styled.div`
+const MainContainer = styled.div`
     height: 100%;
-    width: 30%;
-    margin-left: 35%;
+    width: 500px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @media screen and (max-width: 1250px) {
+        width: 375px;
+    }
+
+    @media screen and (max-width: 450px) {
+        width: 325px;
+    }
+
+    @media screen and (max-width: 320px) {
+        width: 275px;
+    }
 `;
 
 

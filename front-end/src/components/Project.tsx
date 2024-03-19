@@ -27,15 +27,30 @@ export const Project:FC<DataI> = ({data}) => {
 const StyledProject = styled.div`
     height: 25rem;
     width: 30%;
-    margin: 24px 1.65%;
+    margin: 5px 1.65% 24px 1.65%;
     background: rgb(70, 65, 65);
     border-radius: 10px;
     transition: 0.7s;
     cursor: pointer;
 
     &:hover {
-        transition: 0.7s;
-        scale: 1.05;
+        transition: 0.5s;
+        scale: 1.025;
+    }
+
+    @media screen and (max-width: 1200px) {
+        width: 45%;
+        margin: 5px 2.5% 24px 2.5%;
+    }
+
+    @media screen and (max-width: 1200px) {
+        width: 45%;
+        margin: 5px calc(5% - 5px) 24px 5px;
+    }
+
+    @media screen and (max-width: 725px) {
+        width: 90%;
+        margin: 5px 5% 48px 5px;
     }
 `;
 
