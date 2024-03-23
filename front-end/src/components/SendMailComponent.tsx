@@ -1,9 +1,13 @@
 import styled from "@emotion/styled";
+import { motion } from "framer-motion";
 
 export const SendMailComponent = () => {
 
     return(
-        <MainContainer>
+        <MainContainer 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+        >
 
             <InputContainer>
                 <h3>E-Mail:</h3>
@@ -25,7 +29,7 @@ export const SendMailComponent = () => {
     )
 }
 
-const MainContainer = styled.form`
+const MainContainer = styled(motion.form)`
     width: 40%;
     height: 90%;
     margin-bottom: 5%;

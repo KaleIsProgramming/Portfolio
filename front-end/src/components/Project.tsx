@@ -1,5 +1,6 @@
 import { FC } from "react";
 import styled from "@emotion/styled";
+import { motion } from "framer-motion"; 
 import { ProjectI } from "./";
 
 interface DataI {
@@ -10,7 +11,11 @@ export const Project:FC<DataI> = ({data}) => {
     const {name, description, image} = data
 
     return(
-        <StyledProject>
+        <StyledProject
+            initial={{ opacity: 0}}
+            whileInView={{ opacity: 1}}
+            transition={{duration: 1}}
+        >
             <ImageContainer>
                 {image}
             </ImageContainer>
@@ -24,7 +29,7 @@ export const Project:FC<DataI> = ({data}) => {
     )
 }
 
-const StyledProject = styled.div`
+const StyledProject = styled(motion.div)`
     height: 25rem;
     width: 30%;
     margin: 5px 1.65% 24px 1.65%;
