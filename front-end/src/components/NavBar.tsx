@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import styled from "@emotion/styled";
+import { motion } from "framer-motion";
 import { useLocation } from "react-router-dom";
 
 interface item {

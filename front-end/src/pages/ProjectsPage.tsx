@@ -1,16 +1,21 @@
 import styled from "@emotion/styled";
+import { motion } from "framer-motion";
 import { ProjectsList } from "../components";
 
 export const ProjectsPage = () => {
 
     return(
-        <StyledProjectsPage>
+        <StyledProjectsPage
+            initial={{opacity: 0, y: 200}} 
+            animate={{ y: 0, opacity: 1 }}
+            transition={{duration: 1}}
+        >
             <ProjectsList />
         </StyledProjectsPage>
     )
 }
 
-const StyledProjectsPage = styled.div`
+const StyledProjectsPage = styled(motion.div)`
     height: 91vh;
     width: 100%;
     display: flex;

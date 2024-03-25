@@ -1,9 +1,14 @@
 import styled from "@emotion/styled";
+import { motion } from "framer-motion";
 
 export const AboutMe = () => {
 
     return(
-        <WelcomeComponent>
+        <WelcomeComponent
+            initial={{opacity: 0, y: 200}} 
+            animate={{ y: 0, opacity: 1 }}
+            transition={{duration: 1}}
+        >
 
             <LeftContainer>
                 <h1>Hi there!</h1>
@@ -26,7 +31,7 @@ export const AboutMe = () => {
     )
 }
 
-const WelcomeComponent = styled.div`
+const WelcomeComponent = styled(motion.div)`
     height: 91vh;
     width: 100%;
     display: flex;  
@@ -54,7 +59,7 @@ const LeftContainer = styled.div`
     }
 `;
 
-const RightContainer = styled.div`
+const RightContainer = styled(motion.div)`
     height: 75%;
     width: 40%;
 
